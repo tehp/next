@@ -1,5 +1,5 @@
-const meow = require('meow');
-const next = require('.');
+import * as meow from "meow";
+import next from "./index";
 
 const cli = meow(`
     Usage

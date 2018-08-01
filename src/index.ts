@@ -1,18 +1,19 @@
-const chalk = require('chalk');
-const show = require('./actions/show');
+import chalk from "chalk";
+import "./actions/show";
+import { List } from "./lib/List";
 
-const nextCLI = (input, flags) => {
+export default function nextCLI(input:any, flags:any) {
+
+  var list:List = new List();
 
   if (flags.contribute) {
     return console.log('Contributions are welcome here: https://github.com/tehp/next');
   }
 
   if (flags.show) {
-    return show();
+    console.log('show');
   }
 
   return console.log(chalk.red('Error: ') + 'command not recognized.\nType next --help for usage information.');
 
 };
-
-module.exports = nextCLI;

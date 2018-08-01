@@ -15,6 +15,10 @@ const cli = meow(`
       type: 'boolean',
       alias: 'h'
     },
+    version: {
+      type: 'boolean',
+      alias: 'v'
+    },
     contribute: {
       type: 'boolean',
       alias: 'c'

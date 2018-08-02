@@ -6,9 +6,12 @@ const cli = meow(`
       $ next <input>
 
     Options
-      --help, -h        Show this screen
-      --contribute, -c  Show how you can help make this project better
-      --show, -s        Show all tasks
+      --help, -h             Show this screen
+      --version, -v          Show the application version
+      --contribute, -c       Show how you can help make this project better
+      --show, -s             Show all tasks with indexes
+      --add, -a [name]       Add a new item to the list
+      --remove, -r [index]   Remove a task by its shown index
 `, {
   flags: {
     help: {
@@ -38,4 +41,4 @@ const cli = meow(`
   }
 });
 
-next(cli.input[0], cli.flags);
+next(cli.input, cli.flags);

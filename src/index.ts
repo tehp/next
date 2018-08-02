@@ -8,25 +8,30 @@ export default function nextCLI(input:any, flags:any) {
   // Load file into object for modifying
   var list:List = new List();
 
+  // -c, --contribute
   if (flags.contribute) {
     console.log('Contributions are welcome here: https://github.com/tehp/next');
     return;
   }
 
+  // -s, --show
   if (flags.show) {
+    console.log('\n  ' + chalk.magenta('TASKS:') + ' \n');
     list.printTodo();
     return;
   }
 
+  // -a, --add
   if (flags.add) {
-    list.addItem(new Item(input));
-    list.applyChanges();
+    let name = input[0];
+    list.addItem(new Item(name));
     return;
   }
 
+  // -r, --remove
   if (flags.remove) {
-    list.removeItem(input);
-    list.applyChanges();
+    let index = input[0];
+    list.removeItem(index);
     return;
   }
 

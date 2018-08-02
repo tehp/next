@@ -26,6 +26,14 @@ const cli = meow(`
     show: {
       type: 'boolean',
       alias: 's'
+    },
+    add: {
+      type: 'boolean',
+      alias: 'a'
+    },
+    remove: {
+      type: 'boolean',
+      alias: 'r'
     }
   }
 });

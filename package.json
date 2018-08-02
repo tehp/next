@@ -25,6 +25,7 @@
         "@types/meow": "^4.0.1",
         "chalk": "^2.4.1",
         "file-system": "^2.2.2",
+        "gradient-string": "^1.1.0",
         "meow": "^5.0.0"
     }
 }

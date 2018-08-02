@@ -9,6 +9,7 @@ export class List {
 
   path:string = os.homedir() + '/.next.json';
   items:Item[];
+  items_todo:Item[];
 
   constructor() {
     if (!fs.existsSync(this.path)) {
@@ -17,6 +18,14 @@ export class List {
       this.applyChanges();
     }
     this.items = JSON.parse(fs.readFileSync(this.path, 'utf-8'));
+
+    // Populate items_todo
+    this.items_todo = [];
+    this.items.forEach((value) => {
+      if (!value.isDone) {
+        this.items_todo.push(value);
+      }
+    });
   }
 
   // Save the current object state to JSON file
@@ -50,14 +59,8 @@ export class List {
     return this.items;
   }
 
-  // Prints all non-done items, prints an index for each item that can be used with remove
-  public printTodo() {
-    let index = 0;
-    this.items.forEach((value) => {
-      if (!value.isDone) {
-        console.log(index++ + ' ' + value.name);
-      }
-    });
+  // Get all non-done items
+  public getTodo() {
+    return this.items_todo;
   }
-
 }

@@ -1,4 +1,5 @@
 import chalk from "chalk";
+import * as gradient from "gradient-string";
 import "./actions/show";
 import { List } from "./List";
 import { Item } from "./Item";
@@ -16,8 +17,8 @@ export default function nextCLI(input:any, flags:any) {
 
   // -s, --show
   if (flags.show) {
-    console.log('\n  ' + chalk.magenta('TASKS:') + ' \n');
-    list.printTodo();
+    console.log('\n   ' + chalk.magenta('TASKS:') + ' \n');
+    console.log(list.getTodo());
     return;
   }
 

@@ -6,7 +6,7 @@
     "scripts": {
         "build": "tsc",
         "start": "tsc && node dist/cli.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "ava"
     },
     "bin": {
         "next": "cli.js"
@@ -27,5 +27,8 @@
         "file-system": "^2.2.2",
         "gradient-string": "^1.1.0",
         "meow": "^5.0.0"
+    },
+    "devDependencies": {
+        "ava": "^1.1.0"
     }
 }

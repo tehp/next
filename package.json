@@ -6,7 +6,7 @@
     "scripts": {
         "build": "tsc",
         "start": "tsc && node dist/cli.js",
-        "test": "ava"
+        "test": "ava -v"
     },
     "bin": {
         "next": "cli.js"

@@ -22,7 +22,7 @@ export class List {
     // Populate items_todo
     this.items_todo = [];
     this.items.forEach((value) => {
-      if (!value.isDone) {
+    if (!value.isDone) {
         this.items_todo.push(value);
       }
     });

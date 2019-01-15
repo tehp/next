@@ -1,11 +1,10 @@
 import chalk from "chalk";
-import * as gradient from "gradient-string";
 import "./actions/show";
 import { List } from "./List";
 import { Item } from "./Item";
 
 export default function nextCLI(input:any, flags:any) {
-
+ 
   // Load file into object for modifying
   var list:List = new List();
 
@@ -17,8 +16,11 @@ export default function nextCLI(input:any, flags:any) {
 
   // -s, --show
   if (flags.show) {
-    console.log('\n   ' + chalk.magenta('TASKS:') + ' \n');
-    console.log(list.getTodo());
+    console.log('\n' + chalk.magenta('     TASKS:') + ' \n');
+    let index = 0;
+    list.getTodo().forEach((value) => {
+      console.log(' [' + index++ + '] ' + value.name);
+    });
     return;
   }
 

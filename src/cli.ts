@@ -13,32 +13,40 @@ const cli = meow(`
       --add, -a [name]       Add a new item to the list
       --remove, -r [index]   Remove a task by its shown index
 `, {
-  flags: {
-    help: {
-      type: 'boolean',
-      alias: 'h'
-    },
-    version: {
-      type: 'boolean',
-      alias: 'v'
-    },
-    contribute: {
-      type: 'boolean',
-      alias: 'c'
-    },
-    show: {
-      type: 'boolean',
-      alias: 's'
-    },
-    add: {
-      type: 'boolean',
-      alias: 'a'
-    },
-    remove: {
-      type: 'boolean',
-      alias: 'r'
+    flags: {
+      help: {
+        type: 'boolean',
+        alias: 'h'
+      },
+      version: {
+        type: 'boolean',
+        alias: 'v'
+      },
+      contribute: {
+        type: 'boolean',
+        alias: 'c'
+      },
+      show: {
+        type: 'boolean',
+        alias: 's'
+      },
+      add: {
+        type: 'boolean',
+        alias: 'a'
+      },
+      remove: {
+        type: 'boolean',
+        alias: 'r'
+      },
+      done: {
+        type: 'boolean',
+        alias: 'd'
+      },
+      notdone: {
+        type: 'boolean',
+        alias: 'nd'
+      }
     }
-  }
-});
+  });
 
 next(cli.input, cli.flags);
